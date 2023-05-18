@@ -3,8 +3,8 @@
 using namespace std;
 int main(){
     // Image height and width
-    const int image_width = 4;
-    const int image_height = 2;
+    const int image_width = 400;
+    const int image_height = 200;
 
     // Render
     cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
@@ -25,5 +25,7 @@ int main(){
             cout << ir << ' ' << ig << ' ' << ib << '\n';
         }
     }
+
+    cerr << "\nDone.\n";
     
 }

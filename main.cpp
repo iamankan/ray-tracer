@@ -1,5 +1,10 @@
 #include<iostream>
 #include<stdio.h>
+
+#include<vec3.h>
+#include<color.h>
+
+
 using namespace std;
 int main(){
     // Image height and width
@@ -12,17 +17,19 @@ int main(){
     // Loop over pixels
     for(int j = 0;j< image_height;j++){
         for(int i=0;i<image_width;i++){
-            auto r = double(i) / (image_width-1);
-            auto g = double(j) / (image_height-1);
-            auto b = 0.25;
+            color pixel_color(double(i)/(image_width-1), double(j)/(image_height-1), 0.25); // Initialize color
+            write_color(cout, pixel_color); // Write color to stdout
+            // auto r = double(i) / (image_width-1);
+            // auto g = double(j) / (image_height-1);
+            // auto b = 0.25;
 
-            // Convert to 0-255
-            int ir = static_cast<int>(255.999 * r);
-            int ig = static_cast<int>(255.999 * g);
-            int ib = static_cast<int>(255.999 * b);
+            // // Convert to 0-255
+            // int ir = static_cast<int>(255.999 * r);
+            // int ig = static_cast<int>(255.999 * g);
+            // int ib = static_cast<int>(255.999 * b);
 
-            // Print to stdout
-            cout << ir << ' ' << ig << ' ' << ib << '\n';
+            // // Print to stdout
+            // cout << ir << ' ' << ig << ' ' << ib << '\n';
         }
     }
 

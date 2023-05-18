@@ -26,23 +26,24 @@ class vec3{
             e[2] += v.e[2];
             return *this; // Return reference to the object itself
         }
-
-        vec3& operator*=(const double t){ // (1,0,1) *= 2 = (2,0,2)
-            e[0] *= t;
-            e[1] *= t;
-            e[2] *= t;
-            return *this; // Return reference to the object itself
-        }
-
-        vec3& operator/=(const double t){ // (1,0,1) /= 2 = (0.5,0,0.5)
-            return *this *= 1/t; // Return reference to the object itself
-            /*
+        /*
                 vec3 v(2.0, 3.0, 4.0);
                 v *= 2;       // Multiply each component of v by 2
                 v *= 1.5;     // Multiply each component of v by 1.5
                 v *= 1/t;     // Multiply each component of v by 1/t and update the value of v
 
             */
+
+        vec3& operator*=(const double t){ // (1,0,1) *= 2 = (2,0,2) or (1,0,1)*2 = (2,0,2)
+            e[0] *= t;
+            e[1] *= t;
+            e[2] *= t;
+            return *this; // Return reference to the object itself
+        }
+
+        vec3& operator/=(const double t){ // (1,0,1) /= 2 = (0.5,0,0.5) or (1,0,1)/2 = (0.5,0,0.5)
+            return *this *= 1/t; // Return reference to the object itself
+            
         }
 
         double length() const { // Length of vector

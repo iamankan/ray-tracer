@@ -4,11 +4,11 @@
 #include <cmath>
 #include <iostream>
 
+
 using std::sqrt;
 
 class vec3{
     public:
-        double e[3];
         vec3() : e{0,0,0} {} // Default constructor
         vec3(double e0, double e1, double e2) : e{e0,e1,e2} {} // Constructor
 
@@ -53,12 +53,14 @@ class vec3{
         double length_squared() const { // Length of vector squared
             return e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
         }
+
+    public:
+        double e[3]; // Vector components
 };
 
 using point3 = vec3; // 3D point
 using color = vec3; // RGB color
 
-#endif
 
 // vec3 Utility Functions
 
@@ -105,3 +107,5 @@ inline vec3 cross(const vec3 &u, const vec3 &v) {
 inline vec3 unit_vector(vec3 v) {
     return v / v.length();
 }
+
+#endif

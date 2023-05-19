@@ -1,9 +1,8 @@
 #include<iostream>
 #include<stdio.h>
 
-#include<vec3.h>
-#include<color.h>
-
+#include "vec3.h"
+#include "color.h"
 
 using namespace std;
 int main(){
